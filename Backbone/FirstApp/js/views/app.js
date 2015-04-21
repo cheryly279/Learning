@@ -31,10 +31,15 @@ app.AppView = Backbone.View.extend({
     this.$footer = this.$('#footer');
     this.$main = this.$('#main');
 
+    // QUESTION: WHY DO WE SET THIS HERE, WHY NOT IN THE COLLECTION ITSELF?
+    // OR ARE WE EXPECTING THE COLLECTION MIGHT BE USED AGAIN IN ANOTHER APP?
     this.listenTo(app.Todos, 'add', this.addOne);
     this.listenTo(app.Todos, 'reset', this.addAll);
     this.listenTo(app.Todos, 'change:completed', this.filterOne);
+
+    // QUESTION: SO IS THIS A CUSTOM EVENT?
     this.listenTo(app.Todos, 'filter', this.filterAll);
+    
     this.listenTo(app.Todos, 'all', this.render);
 
     app.Todos.fetch();
