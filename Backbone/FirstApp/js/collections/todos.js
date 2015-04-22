@@ -45,5 +45,4 @@ var TodoList = Backbone.Collection.extend({
 });
 
 // Create our global collection of **Todos**.
-// QUESTION: WHY ISN'T THIS DONE IN THE MAIN app.js?
 app.Todos = new TodoList();
