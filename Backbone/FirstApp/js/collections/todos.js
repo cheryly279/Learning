@@ -34,7 +34,6 @@ var TodoList = Backbone.Collection.extend({
     if ( !this.length ) {
       return 1;
     }
-    // QUESTION: WHERE DOES ORDER COME FROM?
     return this.last().get('order') + 1;
   },
 
